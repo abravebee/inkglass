@@ -1,3 +1,4 @@
+//Imports
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -11,3 +12,6 @@ let EntrySchema = new Schema({
   tarot: {type: Number, required: false},
   notes: {type: String, required: false},
 })
+
+//Export
+module.exports = mongoose.model('Product', ProductSchema);
