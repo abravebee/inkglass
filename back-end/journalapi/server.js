@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 //Import routes for journal entries
-const journal = require('./routes/product');
+const entries = require('./routes/entries');
 
 //Initialize express app
 const app = express();
@@ -20,3 +20,6 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //Body Parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+
+//Routes
+app.use('/entries', entries);
