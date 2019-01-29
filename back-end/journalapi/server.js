@@ -23,3 +23,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 //Routes
 app.use('/entries', entries);
+
+//Port
+let port = 5500;
+
+app.listen(port, () => {
+  console.log(`\n=== Server Running on Port ${port} ===\n`)
+})
