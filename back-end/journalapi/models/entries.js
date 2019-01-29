@@ -8,7 +8,6 @@ let EntrySchema = new Schema({
   mood: {type: String, required: true},
   lunar: {type: String, required: false},
   horo: {type: String, required: false},
-  tarot: {type: String, required: false},
-  ritual: {type: String, required: false},
+  tarot: {type: Number, required: false},
   notes: {type: String, required: false},
 })
