@@ -7,3 +7,4 @@ exports.test = function (req, res) {
   res.send('<h1>The prophecy is true.</h1>');
   console.log('Boom.');
 }
+

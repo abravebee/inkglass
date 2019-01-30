@@ -5,3 +5,5 @@ const entriesController = require('../controllers/entries');
 
 //Test Route
 router.get('/test', entriesController.test);
+
+module.exports = router;
