@@ -10,5 +10,7 @@ router.get('/test', entriesController.test);
 //Create
 router.post('/create', entriesController.entryCreate);
 
+//Read
+router.get('/:id', entriesController.entrySingle);
 
 module.exports = router;
