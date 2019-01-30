@@ -13,4 +13,7 @@ router.post('/create', entriesController.entryCreate);
 //Read
 router.get('/:id', entriesController.entrySingle);
 
+//Update
+router.put('/:id/update', entriesController.entrySingleUpdate);
+
 module.exports = router;
