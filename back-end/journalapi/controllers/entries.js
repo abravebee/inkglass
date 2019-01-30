@@ -45,3 +45,11 @@ exports.entrySingleUpdate = (req, res) => {
     res.send('Entry updated');
   });
 };
+
+//Delete
+exports.entrySingleDelete = (req, res) => {
+  Entry.findOneAndDelete(req.params.id, (err) => {
+    if(err) return next(err);
+    res.send('Entry deleted.')
+  })
+}
