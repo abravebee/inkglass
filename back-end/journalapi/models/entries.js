@@ -14,4 +14,4 @@ let EntrySchema = new Schema({
 })
 
 //Export
-module.exports = mongoose.model('Product', ProductSchema);
+module.exports = mongoose.model('Entry', EntrySchema);
