@@ -16,4 +16,7 @@ router.get('/:id', entriesController.entrySingle);
 //Update
 router.put('/:id/update', entriesController.entrySingleUpdate);
 
+//Delete
+router.delete('/:id/delete', entriesController.entrySingleDelete);
+
 module.exports = router;
