@@ -35,5 +35,13 @@ exports.entrySingle = (req, res) => {
   Entry.findById(req.params.id, (err, entry) => {
     if (err) return next(err);
     res.send(entry);
-  })
+  });
+};
+
+//Update
+exports.entrySingleUpdate = (req, res) => {
+  Entry.findByIdAndUpdate(req.params.id, {$set: req.body}, (err, entry) => {
+    if (err) return next(err);
+    res.send('Entry updated');
+  });
 };
