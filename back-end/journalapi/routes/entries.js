@@ -6,4 +6,9 @@ const entriesController = require('../controllers/entries');
 //Test Route
 router.get('/test', entriesController.test);
 
+//CRUD
+//Create
+router.post('/create', entriesController.entryCreate);
+
+
 module.exports = router;
