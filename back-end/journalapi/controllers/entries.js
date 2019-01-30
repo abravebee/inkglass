@@ -25,7 +25,15 @@ exports.entryCreate = (req, res) => {
 
   entry.save((err) => {
     if(err) return next(err);
-    res.send('Entry created successfully')
+    res.send('Entry created successfully').json(entry)
     console.log(entry)
   });
+};
+
+//Read
+exports.entrySingle = (req, res) => {
+  Entry.findById(req.params.id, (err, entry) => {
+    if (err) return next(err);
+    res.send(entry);
+  })
 };
