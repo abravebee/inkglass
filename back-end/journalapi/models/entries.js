@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 //Schema Definition
 let EntrySchema = new Schema({
+  author: {type: Schema.ObjectId},
   date: {type: Number, required: true},
   title: {type: String, required: false},
   mood: {type: String, required: true},
