@@ -10,3 +10,6 @@ let UserSchema = new Schema({
   birthday: {type: Number, required: false},
   astro: {type: String, required: false},
 })
+
+//Export
+module.exports = mongoose.model('User', UserSchema);
