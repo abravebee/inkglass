@@ -10,4 +10,7 @@ router.get('/test', usersController.test);
 //Create User
 router.post('/create', usersController.createUser);
 
+//Read User
+router.get('/:id', usersController.readUser);
+
 module.exports = router;

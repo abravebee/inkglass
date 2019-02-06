@@ -29,6 +29,14 @@ exports.createUser = (req, res) => {
 exports.readUser = (req, res) => {
   User.findById(req.params.id, (err, user) => {
     if (err) return next(err);
-    res.send(entry)
+    res.send(user)
   });
 };
+
+//Update a User
+exports.updateUser = (req, res) => {
+  User.findByIdAndUpdate(req.params.id, {$set: req.body}, (err, user) =>{
+    if (err) return next(err);
+    res.send("User updated!", user);
+  });
+}
