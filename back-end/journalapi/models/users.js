@@ -18,7 +18,7 @@ let EntrySchema = new Schema({
 let UserSchema = new Schema({
   username: {type: String, required: true},
   name: {type: String, required: false},
-  email: {type: String, required: false},
+  email: {type: String, required: true},
   birthday: {type: Number, required: false},
   astro: {type: String, required: false},
   entries: [EntrySchema]
