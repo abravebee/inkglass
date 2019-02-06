@@ -25,7 +25,7 @@ exports.entryCreate = (req, res) => {
 
   entry.save((err) => {
     if(err) return next(err);
-    res.send('Entry created successfully').json(entry)
+    res.send('Entry created successfully')
     console.log(entry)
   });
 };

@@ -20,7 +20,15 @@ exports.createUser = (req, res) => {
 
   user.save((err) => {
     if (err) return next(err);
-    res.send('New user added!').json(user)
+    res.send('New user added!')
     console.log(user)
   })
+};
+
+//Find a User
+exports.readUser = (req, res) => {
+  User.findById(req.params.id, (err, user) => {
+    if (err) return next(err);
+    res.send(entry)
+  });
 };
