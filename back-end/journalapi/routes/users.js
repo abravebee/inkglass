@@ -5,3 +5,5 @@ const usersController = require('../controllers/users');
 
 //Test Route
 router.get('/test', usersController.test);
+
+module.exports = router;
