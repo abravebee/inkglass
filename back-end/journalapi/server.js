@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-//Import routes for journal entries
+//Import routes
+const users = require('./routes/users');
 const entries = require('./routes/entries');
 
 //Initialize express app
