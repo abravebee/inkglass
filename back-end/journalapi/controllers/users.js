@@ -11,14 +11,14 @@ exports.test = function(req, res) {
 //Create User
 exports.createUser = (req, res) => {
   let user = new User({
-    username: { type: String, required: true },
-    name: { type: String, required: false },
-    email: { type: String, required: true },
-    birthday: { type: Number, required: false },
-    astro: { type: String, required: false }
+    username: req.body.username,
+    name: req.body.name,
+    email: req.body.email,
+    birthday: req.body.birthday,
+    astro: req.body.astro
   });
 
-  user.save(err => {
+  user.save((err) => {
     if (err) return next(err);
     res.send('New user added!').json(user)
     console.log(user)
