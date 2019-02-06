@@ -17,4 +17,10 @@ exports.createUser = (req, res) => {
     birthday: { type: Number, required: false },
     astro: { type: String, required: false }
   });
+
+  user.save(err => {
+    if (err) return next(err);
+    res.send('New user added!').json(user)
+    console.log(user)
+  })
 };
