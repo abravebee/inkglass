@@ -37,6 +37,14 @@ exports.readUser = (req, res) => {
 exports.updateUser = (req, res) => {
   User.findByIdAndUpdate(req.params.id, {$set: req.body}, (err, user) =>{
     if (err) return next(err);
-    res.send("User updated!", user);
+    res.send(`User ${req.params.id} updated!`);
   });
+}
+
+//Delete a User
+exports.deleteUser = (req, res) => {
+  User.findOneAndDelete(req.params.id, (err) => {
+    if(err) return next(err);
+    res.send(`User ${req.params.id} deleted!`)
+  })
 }
