@@ -1,32 +1,30 @@
 //Imports
-var ObjectId = require('mongodb').ObjectID;
-const Entry = require('../models/entries');
+var ObjectId = require("mongodb").ObjectID;
+const Entry = require("../models/entries");
 
 //Test Route
-exports.test = function (req, res) {
-  res.send('The prophecy is true.');
-  console.log('Boom.');
-}
+exports.test = function(req, res) {
+  res.send("The prophecy is true.");
+  console.log("Boom.");
+};
 
 //CRUD
 //Create
 exports.entryCreate = (req, res) => {
-  let entry = new Entry(
-    {
-      date: req.body.date,
-      title: req.body.title,
-      mood: req.body.mood,
-      lunar: req.body.lunar,
-      horo: req.body.horo,
-      tarot: req.body.tarot,
-      notes: req.body.notes
-    }
-  );
+  let entry = new Entry({
+    date: req.body.date,
+    title: req.body.title,
+    mood: req.body.mood,
+    lunar: req.body.lunar,
+    horo: req.body.horo,
+    tarot: req.body.tarot,
+    notes: req.body.notes
+  });
 
-  entry.save((err) => {
-    if(err) return next(err);
-    res.send('Entry created successfully')
-    console.log(entry)
+  entry.save(err => {
+    if (err) return next(err);
+    res.send("Entry created successfully");
+    console.log(entry);
   });
 };
 
@@ -40,16 +38,16 @@ exports.entrySingle = (req, res) => {
 
 //Update
 exports.entrySingleUpdate = (req, res) => {
-  Entry.findByIdAndUpdate(req.params.id, {$set: req.body}, (err, entry) => {
+  Entry.findByIdAndUpdate(req.params.id, { $set: req.body }, (err, entry) => {
     if (err) return next(err);
-    res.send('Entry updated');
+    res.send("Entry updated");
   });
 };
 
 //Delete
 exports.entrySingleDelete = (req, res) => {
-  Entry.findOneAndDelete(req.params.id, (err) => {
-    if(err) return next(err);
-    res.send('Entry deleted.')
-  })
-}
+  Entry.findOneAndDelete(req.params.id, err => {
+    if (err) return next(err);
+    res.send("Entry deleted.");
+  });
+};

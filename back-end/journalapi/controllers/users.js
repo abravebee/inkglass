@@ -18,24 +18,24 @@ exports.createUser = (req, res) => {
     astro: req.body.astro
   });
 
-  user.save((err) => {
+  user.save(err => {
     if (err) return next(err);
-    res.send('New user added!')
-    console.log(user)
-  })
+    res.send("New user added!");
+    console.log(user);
+  });
 };
 
 //Find a User
 exports.readUser = (req, res) => {
   User.findById(req.params.id, (err, user) => {
     if (err) return next(err);
-    res.send(user)
+    res.send(user);
   });
 };
 
 //Update a User
 exports.updateUser = (req, res) => {
-  User.findByIdAndUpdate(req.params.id, {$set: req.body}, (err, user) => {
+  User.findByIdAndUpdate(req.params.id, { $set: req.body }, (err, user) => {
     if (err) return next(err);
     res.send(`User ${req.params.id} updated!`);
   });
@@ -43,8 +43,8 @@ exports.updateUser = (req, res) => {
 
 //Delete a User
 exports.deleteUser = (req, res) => {
-  User.findOneAndDelete(req.params.id, (err) => {
-    if(err) return next(err);
-    res.send(`User ${req.params.id} deleted!`)
-  })
-}
+  User.findOneAndDelete(req.params.id, err => {
+    if (err) return next(err);
+    res.send(`User ${req.params.id} deleted!`);
+  });
+};
