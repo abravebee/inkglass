@@ -5,6 +5,9 @@ const User = mongoose.model('User'); // experimenting w different syntax
 const Entry = mongoose.model('Entry');
 var ObjectId = require("mongodb").ObjectID;
 
+//== Semantic Global Variables ==//
+const STATUS_USER_ERROR = 422;
+
 //Test Route
 exports.test = function(req, res) {
   res.send("Users are connected.");
