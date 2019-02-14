@@ -1,8 +1,9 @@
 //Imports
 var ObjectId = require("mongodb").ObjectID;
 //const User = require("../models/users");
-const User = mongoose.model('User'); // experimenting w different syntax
 const mongoose = require('mongoose');
+const User = mongoose.model('User'); // experimenting w different syntax
+const Entry = mongoose.model('Entry');
 
 //Test Route
 exports.test = function(req, res) {
