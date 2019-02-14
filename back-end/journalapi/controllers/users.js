@@ -1,9 +1,9 @@
-//Imports
-var ObjectId = require("mongodb").ObjectID;
+//== Imports ==//
 //const User = require("../models/users");
 const mongoose = require('mongoose');
 const User = mongoose.model('User'); // experimenting w different syntax
 const Entry = mongoose.model('Entry');
+var ObjectId = require("mongodb").ObjectID;
 
 //Test Route
 exports.test = function(req, res) {
