@@ -24,11 +24,20 @@ exports.createUser = (req, res) => {
     astro: req.body.astro
   });
 
-  user.save(err => {
-    if (err) return next(err);
-    res.send("New user added!");
-    console.log(user);
-  });
+  // user.save(err => {
+  //   if (err) return next(err);
+  //   res.send("New user added!");
+  //   console.log(user);
+  // });
+
+  user.save()
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => {
+      res.status(422);
+      res.json({ stack: err.stack, message: err.message });
+    })
 };
 
 //Find a User
