@@ -1,6 +1,5 @@
 //Imports
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema, model } = require('mongoose');
 
 //Schema Definition
 let EntrySchema = new Schema({
@@ -15,13 +14,27 @@ let EntrySchema = new Schema({
 });
 
 let UserSchema = new Schema({
-  username: { type: String, required: true },
-  name: { type: String, required: false },
-  email: { type: String, required: true },
-  birthday: { type: Number, required: false },
-  astro: { type: String, required: false },
-  entries: [EntrySchema]
+  username: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    required: false
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  birthday: { 
+    type: Number, required: false 
+  },
+  astro: { 
+    type: String, 
+    required: false 
+  },
+  entries: [{ type: Schema.Types.ObjectId, ref: 'Entry'}]
 });
 
 //Export
-module.exports = mongoose.model("User", UserSchema);
+module.exports = model("User", UserSchema);
