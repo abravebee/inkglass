@@ -1,15 +1,51 @@
 //== Imports ==//
-const mongoose = require("mongoose");
+const { Schema, model } = require('mongoose');
 
-const EntrySchema = new mongoose.Schema({
-  _parent: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
+//== Schema Definition ==//
+let EntrySchema = new Schema({
+  user: { 
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true 
   },
-  text: {
-    type: String,
-    required: true
+  dateCreated: { 
+    type: Number, 
+    required: true 
+  },
+  dateModified: {
+    type: Number,
+    required: false
+  },
+  title: { 
+    type: String, 
+    required: false,
+    trim: true
+  },
+  mood: { 
+    type: String, 
+    required: true,
+    trim: true
+  },
+  lunarPhase: { 
+    type: String, 
+    required: false,
+    trim: true
+  },
+  horoscope: { 
+    type: String, 
+    required: false, 
+    trim: true
+  },
+  tarot: { 
+    type: Number, 
+    required: false,
+    trim: true
+  },
+  reflections: { 
+    type: String, 
+    required: false,
+    trim: true
   }
 });
 
-module.exports = mongoose.model("Entry", EntrySchema);
+module.exports = model("Entry", EntrySchema);
