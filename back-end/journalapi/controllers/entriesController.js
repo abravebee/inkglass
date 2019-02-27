@@ -5,7 +5,7 @@ const Entry = mongoose.model('Entry');
 //Create Entry
 exports.createEntry = (req, res) => {
   let entry = new Entry({
-    user: req.body.user,
+    user: req.params.id,
     dateCreated: date.Now(),
     title: req.body.title,
     mood: req.body.mood,
