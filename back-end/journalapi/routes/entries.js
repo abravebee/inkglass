@@ -1,5 +1,9 @@
 //Imports
 const express = require("express");
 const router = express.Router();
-const entriessController = require("../controllers/usersController");
+const entriesController = require("../controllers/usersController");
+
+
+//Test Route
+router.get("/test", entriesController.test);
 
