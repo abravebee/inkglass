@@ -9,8 +9,11 @@ router.get("/test", entriesController.test);
 
 
 //CRUD
-//Create User
+//Create Entry
 router.post("/:id/create", entriesController.createEntry);
+
+//Read all entries from user
+router.get("/:id/all", entriesController.readAllEntries);
 
 
 module.exports = router;
