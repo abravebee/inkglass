@@ -1,8 +1,7 @@
 //== Imports ==//
 //const User = require("../models/users");
 const mongoose = require('mongoose');
-const User = mongoose.model('User'); // experimenting w different syntax
-const Entry = mongoose.model('Entry');
+const User = mongoose.model('User');
 var ObjectId = require("mongodb").ObjectID;
 
 //Test Route
@@ -61,28 +60,3 @@ exports.deleteUser = (req, res) => {
   });
 };
 
-exports.createUser = (req, res) => {
-  
-};
-
-// Post.findOneAndUpdate(
-//   {"_id": req.params.id}, 
-//   {$push: {comments: {
-//       comment: "Hello World",
-//       user: "933ujrfn393r"
-//   }}
-// }).then(function (post) {
-//   console.log(post);
-//   res.json({success: true});
-// });
-
-
-// let user = new User({name : 'Mary', age : 36, cohort : 2019})
-// let address = new Address({ city : 'Houston', state : 'TX'})
-
-// user.addresses.push(address)
-
-
-// user.save(function(error,newUser){
-//   console.log(newUser)
-// })
