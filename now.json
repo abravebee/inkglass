@@ -1,6 +1,5 @@
 {
   "name": "inkglass",
-  "version": 1,
   "builds": [
    { 
      "src": "/back-end/journalapi/server.js",
