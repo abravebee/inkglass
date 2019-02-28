@@ -12,7 +12,7 @@ exports.test = function(req, res) {
 exports.createEntry = (req, res) => {
   let entry = new Entry({
     user: req.params.id,
-    dateCreated: date.Now(),
+    dateCreated: Date.now(),
     title: req.body.title,
     mood: req.body.mood,
     lunarPhase: req.body.lunarPhase,

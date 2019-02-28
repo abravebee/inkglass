@@ -1,0 +1,5 @@
+{
+  "builds": [
+   { "src": "/back-end/journalapi/server.js" }
+  ]
+}
