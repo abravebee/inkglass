@@ -7,6 +7,9 @@
     }
   ],
   "alias":  ["inkglass.now.sh"],
+  "routes": [
+    { "src": "/.*", "dest": "/back-end/journalapi/server.js" }
+],
   "github": {
     "enabled": true
   }
