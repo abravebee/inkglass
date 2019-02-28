@@ -1,5 +1,8 @@
 {
   "builds": [
    { "src": "/back-end/journalapi/server.js" }
-  ]
+  ],
+  "github": {
+    "enabled": true
+  }
 }
