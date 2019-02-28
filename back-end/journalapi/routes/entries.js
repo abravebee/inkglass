@@ -1,7 +1,7 @@
 //Imports
 const express = require("express");
 const router = express.Router();
-const entriesController = require("../controllers/usersController");
+const entriesController = require("../controllers/entriesController");
 
 
 //Test Route
@@ -12,7 +12,7 @@ router.get("/test", entriesController.test);
 //Create Entry
 router.post("/:id/create", entriesController.createEntry);
 
-//Read all entries from user
+//Read all Entries from User
 router.get("/:id/all", entriesController.readAllEntries);
 
 

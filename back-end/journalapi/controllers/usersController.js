@@ -1,7 +1,7 @@
 //== Imports ==//
-//const User = require("../models/users");
+const User = require("../models/users");
 const mongoose = require('mongoose');
-const User = mongoose.model('User');
+//const User = model('User');
 var ObjectId = require("mongodb").ObjectID;
 
 //Test Route
