@@ -1,6 +1,12 @@
 //Imports
 const mongoose = require("mongoose");
-const Entry = mongoose.model('Entry');
+const Entry = require("../models/entries");
+
+//Test Route
+exports.test = function(req, res) {
+  res.send("Entries are connected.");
+  console.log("Reached entry test function!");
+};
 
 //Create Entry
 exports.createEntry = (req, res) => {
