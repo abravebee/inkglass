@@ -25,7 +25,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //Routes
 app.use("/users", users);
 app.use("/entries", entries);
-app.get('/', (req, res) => {
+
+app.get('/test', (req, res) => {
 
   res.json(`Server up.`)
 })
