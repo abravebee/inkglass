@@ -27,7 +27,7 @@ app.use("/users", users);
 app.use("/entries", entries);
 
 //Port
-let port = 5500;
+let port = process.env.PORT || 5500;
 
 app.listen(port, () => {
   console.log(`\n=== Server Running on Port ${port} ===\n`);
