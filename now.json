@@ -2,7 +2,7 @@
   "name": "inkglass",
   "builds": [
    { 
-     "src": "/back-end/journalapi/index.js",
+     "src": "back-end/journalapi/index.js",
      "use": "@now/node-server"  
     }
   ],
