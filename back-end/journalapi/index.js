@@ -25,6 +25,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //Routes
 app.use("/users", users);
 app.use("/entries", entries);
+app.get('/', (req, res) => {
+
+  res.json(`Server up.`)
+})
 
 //Port
 let port = process.env.PORT || 5500;
