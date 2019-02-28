@@ -1,6 +1,9 @@
 {
   "builds": [
-   { "src": "/back-end/journalapi/server.js" }
+   { 
+     "src": "/back-end/journalapi/server.js",
+     "use": "@now/node-server"  
+    }
   ],
   "github": {
     "enabled": true
