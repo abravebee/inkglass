@@ -37,7 +37,7 @@ _Will likely change to embedded documents in the near future._
 ### /users
 
 `/create`
-	Adds a new user to the database and returns
+	Adds a new user to the database and returns the new user
 
 `/all`
 	Returns a list of all users.
