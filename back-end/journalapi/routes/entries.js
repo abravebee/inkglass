@@ -19,9 +19,9 @@ router.get("/:userid/all", entriesController.readAllEntries);
 router.get("/:userid/:entryid", entriesController.readEntry);
 
 //Update Entry
-router.put("/:userid/:entryid", entriesController.updateEntry);
+router.put("/:entryid/update", entriesController.updateEntry);
 
 //Delete Entry
-router.delete("/:entryid", entriesController.deleteEntry);
+router.delete("/:entryid/delete", entriesController.deleteEntry);
 
 module.exports = router;
