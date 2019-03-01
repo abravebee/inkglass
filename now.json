@@ -1,16 +1,1 @@
-{
-  "name": "inkglass",
-  "builds": [
-   { 
-     "src": "back-end/journalapi/index.js",
-     "use": "@now/node-server"  
-    }
-  ],
-  "alias":  ["inkglass.now.sh"],
-  "routes": [
-    { "src": "/.*", "dest": "/back-end/journalapi/index.js" }
-],
-  "github": {
-    "enabled": true
-  }
-}
+{}

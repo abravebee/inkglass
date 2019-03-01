@@ -9,11 +9,11 @@ let EntrySchema = new Schema({
     required: true 
   },
   dateCreated: { 
-    type: Number, 
+    type: Object, 
     required: true 
   },
   dateModified: {
-    type: Number,
+    type: Object,
     required: false
   },
   title: { 

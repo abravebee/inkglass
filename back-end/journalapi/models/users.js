@@ -16,7 +16,7 @@ let UserSchema = new Schema({
     required: true
   },
   birthday: { 
-    type: Number, required: false 
+    type: String, required: false 
   },
   astro: { 
     type: String, 

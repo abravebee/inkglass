@@ -58,7 +58,7 @@ exports.updateEntry = (req, res) => {
   //change to findoneandupdate?
   Entry.findByIdAndUpdate(req.params.entryid, { $set: req.body }, (err, entry) => {
     if (err) return next(err);
-    res.send(`Entry ${req.params.entryid} updated`)
+    res.send(`Entry ${req.params.entryid} updated!`)
   })
 }
 
@@ -66,6 +66,6 @@ exports.updateEntry = (req, res) => {
 exports.deleteEntry = (req, res) => {
   Entry.findOneAndDelete(req.params.entryid, err => {
     if (err) return next(err);
-    res.send(`Entry ${req.params.entryid} deleted`)
+    res.send(`Entry ${req.params.entryid} deleted!`)
   })
 }
