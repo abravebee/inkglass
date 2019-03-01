@@ -40,6 +40,12 @@ exports.readAllEntries = (req, res) => {
 };
 
 //Find a Single Entry
+exports.readEntry = (req, res) => {
+  Entry.findById(req.params.entryid, (err, entry) => {
+    if (err) return next(err);
+    res.send(entry)
+  })
+}
 
 //Update a Single Entry
 
