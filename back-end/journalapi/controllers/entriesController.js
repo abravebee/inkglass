@@ -33,9 +33,15 @@ exports.createEntry = (req, res) => {
 
 //Find all Entries from a Given User
 exports.readAllEntries = (req, res) => {
-  Entry.find({ user: req.params.userid }, (err, entry) => {
+  Entry.find({ user: req.params.userid }, (err, entries) => {
+    let allEntries = [];
+    
+    entries.map(e => {
+      allEntries.push(e)
+    })
+
     if (err) return next(err);
-    res.send(entry)
+    res.send(allEntries)
   })
 };
 
@@ -48,5 +54,11 @@ exports.readEntry = (req, res) => {
 }
 
 //Update a Single Entry
+exports.updateEntry = (req, res) => {
+  Entry.findByIdAndUpdate(req.params.entryid, (err, entry) => {
+    if (err) return next(err);
+    res.send(`Entry ${req.params.entryid} updated`)
+  })
+}
 
 //Delete a Single Entry
