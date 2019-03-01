@@ -16,6 +16,6 @@ router.post("/:userid/create", entriesController.createEntry);
 router.get("/:userid/all", entriesController.readAllEntries);
 
 //Read Single Entry
-router.get("/:userid/:entryid")
+router.get("/:userid/:entryid", entriesController.readEntry);
 
 module.exports = router;
