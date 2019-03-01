@@ -18,4 +18,10 @@ router.get("/:userid/all", entriesController.readAllEntries);
 //Read Single Entry
 router.get("/:userid/:entryid", entriesController.readEntry);
 
+//Update Entry
+router.put("/:userid/:entryid", entriesController.updateEntry);
+
+//Delete Entry
+router.delete("/:entryid", entriesController.deleteEntry);
+
 module.exports = router;
