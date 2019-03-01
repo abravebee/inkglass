@@ -36,9 +36,24 @@ exports.createUser = (req, res) => {
     })
 };
 
+//Read All Users
+exports.readAll = (req, res) => {
+  User.find({}, (err, users) => {
+    let allUsers = [];
+
+    users.map(u => {
+      allUsers.push(u)
+    });
+
+    if (err) return next(err);
+    res.send(allUsers);
+  });
+};
+
+
 //Find a User
 exports.readUser = (req, res) => {
-  User.findById(req.params.id, (err, user) => {
+  User.findById(req.params.userid, (err, user) => {
     if (err) return next(err);
     res.send(user);
   });
@@ -46,17 +61,17 @@ exports.readUser = (req, res) => {
 
 //Update a User
 exports.updateUser = (req, res) => {
-  User.findByIdAndUpdate(req.params.id, { $set: req.body }, (err, user) => {
+  User.findByIdAndUpdate(req.params.userid, { $set: req.body }, (err, user) => {
     if (err) return next(err);
-    res.send(`User ${req.params.id} updated!`);
+    res.send(`User ${req.params.userid} updated!`);
   });
 };
 
 //Delete a User
 exports.deleteUser = (req, res) => {
-  User.findOneAndDelete(req.params.id, err => {
+  User.findOneAndDelete(req.params.userid, err => {
     if (err) return next(err);
-    res.send(`User ${req.params.id} deleted!`);
+    res.send(`User ${req.params.userid} deleted!`);
   });
 };
 

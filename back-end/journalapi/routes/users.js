@@ -14,12 +14,12 @@ router.post("/create", usersController.createUser);
 router.get("/all", usersController.readAll)
 
 //Read User
-router.get("/:id", usersController.readUser);
+router.get("/:userid", usersController.readUser);
 
 //Update User
-router.put("/:id/update", usersController.updateUser);
+router.put("/:userid/update", usersController.updateUser);
 
 //Delete User
-router.delete("/:id/delete", usersController.deleteUser);
+router.delete("/:userid/delete", usersController.deleteUser);
 
 module.exports = router;

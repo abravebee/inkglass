@@ -33,7 +33,7 @@ exports.createEntry = (req, res) => {
 
 //Find all Entries from a Given User
 exports.readAllEntries = (req, res) => {
-  Entry.find({ user: req.params.id }, (err, entry) => {
+  Entry.find({ user: req.params.userid }, (err, entry) => {
     if (err) return next(err);
     res.send(entry)
   })

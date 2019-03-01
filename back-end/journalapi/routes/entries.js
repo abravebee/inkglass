@@ -10,10 +10,12 @@ router.get("/test", entriesController.test);
 
 //CRUD
 //Create Entry
-router.post("/:id/create", entriesController.createEntry);
+router.post("/:userid/create", entriesController.createEntry);
 
 //Read all Entries from User
-router.get("/:id/all", entriesController.readAllEntries);
+router.get("/:userid/all", entriesController.readAllEntries);
 
+//Read Single Entry
+router.get("/:userid/:entryid")
 
 module.exports = router;
