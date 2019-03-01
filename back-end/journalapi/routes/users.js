@@ -10,6 +10,9 @@ router.get("/test", usersController.test);
 //Create User
 router.post("/create", usersController.createUser);
 
+//Read All
+router.get("/all", usersController.readAll)
+
 //Read User
 router.get("/:id", usersController.readUser);
 
