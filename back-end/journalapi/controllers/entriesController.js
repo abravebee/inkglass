@@ -56,7 +56,7 @@ exports.readEntry = (req, res) => {
 //Update a Single Entry
 exports.updateEntry = (req, res) => {
   //change to findoneandupdate?
-  Entry.findByIdAndUpdate(req.params.entryid, (err, entry) => {
+  Entry.findByIdAndUpdate(req.params.entryid, { $set: req.body }, (err, entry) => {
     if (err) return next(err);
     res.send(`Entry ${req.params.entryid} updated`)
   })
