@@ -61,6 +61,7 @@ exports.readUser = (req, res) => {
 
 //Update a User
 exports.updateUser = (req, res) => {
+  //change to findoneandupdate?
   User.findByIdAndUpdate(req.params.userid, { $set: req.body }, (err, user) => {
     if (err) return next(err);
     res.send(`User ${req.params.userid} updated!`);
