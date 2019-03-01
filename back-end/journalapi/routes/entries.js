@@ -1,22 +1,27 @@
 //Imports
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const entriesController = require('../controllers/entries');
+const entriesController = require("../controllers/entriesController");
+
 
 //Test Route
-router.get('/test', entriesController.test);
+router.get("/test", entriesController.test);
+
 
 //CRUD
-//Create
-router.post('/create', entriesController.entryCreate);
+//Create Entry
+router.post("/:userid/create", entriesController.createEntry);
 
-//Read
-router.get('/:id', entriesController.entrySingle);
+//Read all Entries from User
+router.get("/:userid/all", entriesController.readAllEntries);
 
-//Update
-router.put('/:id/update', entriesController.entrySingleUpdate);
+//Read Single Entry
+router.get("/:userid/:entryid", entriesController.readEntry);
 
-//Delete
-router.delete('/:id/delete', entriesController.entrySingleDelete);
+//Update Entry
+router.put("/:userid/:entryid/update", entriesController.updateEntry);
+
+//Delete Entry
+router.delete("/:userid/:entryid/delete", entriesController.deleteEntry);
 
 module.exports = router;

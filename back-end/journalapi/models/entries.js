@@ -1,18 +1,51 @@
-//Imports
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+//== Imports ==//
+const { Schema, model } = require('mongoose');
 
-//Schema Definition
+//== Schema Definition ==//
 let EntrySchema = new Schema({
-  author: {type: Schema.ObjectId},
-  date: {type: Number, required: true},
-  title: {type: String, required: false},
-  mood: {type: String, required: true},
-  lunar: {type: String, required: false},
-  horo: {type: String, required: false},
-  tarot: {type: Number, required: false},
-  notes: {type: String, required: false},
-})
+  user: { 
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true 
+  },
+  dateCreated: { 
+    type: Object, 
+    required: true 
+  },
+  dateModified: {
+    type: Object,
+    required: false
+  },
+  title: { 
+    type: String, 
+    required: false,
+    trim: true
+  },
+  mood: { 
+    type: String, 
+    required: true,
+    trim: true
+  },
+  lunarPhase: { 
+    type: String, 
+    required: false,
+    trim: true
+  },
+  horoscope: { 
+    type: String, 
+    required: false, 
+    trim: true
+  },
+  tarot: { 
+    type: Number, 
+    required: false,
+    trim: true
+  },
+  reflections: { 
+    type: String, 
+    required: false,
+    trim: true
+  }
+});
 
-//Export
-module.exports = mongoose.model('Entry', EntrySchema);
+module.exports = model("Entry", EntrySchema);
