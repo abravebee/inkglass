@@ -11,12 +11,12 @@
   ],
   "routes": [
     {
-      "src": "/back-end/journalapi/(.*)",
-      "dest": "back-end/$1"
+      "src": "/back-end/(.*)",
+      "dest": "back-end/journalapi/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/app/$1"
+      "dest": "/front-end/$1"
     }
   ],
   "github": {
