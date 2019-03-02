@@ -3,15 +3,15 @@
   "version": 2,
   "builds": [
    { 
-     "src": "back-end/journalapi/server.js",
+     "src": "back-end/journalapi/index.js",
      "use": "@now/node"  
     },
-    { "src": "**/*.js", "use": "@now/node" }
+    { "src": "**/*.js", "use": "@now/node" },
+    {
+      "src": "front-end/src/index.js"
+    }
   ],
   "alias":  ["inkglass.now.sh"],
-  "routes": [
-    { "src": "/.*", "dest": "/back-end/journalapi/server.js" }
-],
   "github": {
     "enabled": true
   }
