@@ -36,6 +36,7 @@ app.get('/', (req, res) => {
 //Port
 let port = 5500 || process.env.PORT;
 
-app.listen(port, () => {
-  console.log(`\n=== Server Running on Port ${port} ===\n`);
-});
+// app.listen(port, () => {
+//   console.log(`\n=== Server Running on Port ${port} ===\n`);
+// });
+app.listen();
