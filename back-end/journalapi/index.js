@@ -1,13 +1,10 @@
+//== Dependencies ==//
 const express = require("express");
 const bodyParser = require("body-parser");
 const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
 
-//Import routes
-const users = require("./routes/users");
-const entries = require("./routes/entries");
-
-//Initialize express app
+//== Initialize Express App ==//
 const app = express();
 
 //Connecting app to remote database
@@ -24,7 +21,30 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//Routes
+
+//== Authentication ==//
+const checkJwt = jwt({
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: `https://bakerc.auth0.com/.well-known/jwks.json`
+  }),
+
+  //Validate the audience and the issuer.
+  audience: `Ik8pcKF4QAFcSV7QCOIYDSj0CH2ahljb`,
+  issuer: `https://bakerc.auth0.com`,
+  algorithms: [`RS246`]
+})
+
+
+//== Routes ==//
+
+//Import routes
+const users = require("./routes/users");
+const entries = require("./routes/entries");
+
+//Use routes
 app.use("/users", users);
 app.use("/entries", entries);
 
