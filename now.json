@@ -7,7 +7,10 @@
       "src": "back-end/journalapi/index.js",
       "use": "@now/node"
     },
-    { "src": "front-end/package.json", "use": "@now/static-build" }
+    { "src": "front-end/package.json", 
+      "use": "@now/static-build",
+      "config": { "distDir": "build" } 
+    }
   ],
   "routes": [
     {
