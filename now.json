@@ -4,7 +4,7 @@
   "alias": ["inkglass.now.sh"],
   "builds": [
     {
-      "src": "back-end/journalapi/*.js",
+      "src": "back-end/journalapi/index.js",
       "use": "@now/node"
     },
     { "src": "front-end/package.json", 
@@ -14,7 +14,7 @@
   ],
   "routes": [
     {
-      "src": "/back-end/(.*)",
+      "src": "/back-end/index.js",
       "dest": "back-end/journalapi/$1"
     },
     {
