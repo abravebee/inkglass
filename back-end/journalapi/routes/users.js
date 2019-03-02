@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 var ObjectId = require("mongodb").ObjectID;
-const checkJwt = require("./auth.js/index.js")
+const checkJwt = require("./auth.js")
 
 // User model
 const User = require("../models/users");
