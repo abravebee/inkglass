@@ -21,7 +21,7 @@
     {
       "src": "/(.*)",
       "dest": "/app/$1"
-    },
+    }
   ],
   "github": {
     "enabled": true
