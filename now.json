@@ -15,7 +15,7 @@
       "dest": "back-end/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/front-end/src/(.*)",
       "dest": "/app/$1"
     }
   ],
