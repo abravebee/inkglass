@@ -16,4 +16,3 @@ exports.checkJwt = jwt({
   issuer: `https://bakerc.auth0.com`,
   algorithms: [`RS246`]
 })
-
