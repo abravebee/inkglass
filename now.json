@@ -14,7 +14,7 @@
   ],
   "routes": [
     {
-      "src": "/back-end/index.js",
+      "src": "/back-end/",
       "dest": "back-end/journalapi/$1"
     },
     {
