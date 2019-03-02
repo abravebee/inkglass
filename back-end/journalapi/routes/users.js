@@ -1,31 +1,18 @@
 //== Dependencies ==//
 const express = require("express");
 const router = express.Router();
-const jwt = require('express-jwt');
-const jwksRsa = require('jwks-rsa');
 const mongoose = require('mongoose');
 var ObjectId = require("mongodb").ObjectID;
+const checkJwt = require("../auth.js")
 
 // User model
 const User = require("../models/users");
 
-//== Authentication ==//
-const checkJwt = jwt({
-  secret: jwksRsa.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: `https://bakerc.auth0.com/.well-known/jwks.json`
-  }),
-
-  //Validate the audience and the issuer.
-  audience: `Ik8pcKF4QAFcSV7QCOIYDSj0CH2ahljb`,
-  issuer: `https://bakerc.auth0.com`,
-  algorithms: [`RS246`]
-})
-
 //Test Route
-router.get("/test", usersController.test);
+router.get("/test", (req, res) => {
+  res.send("Entries are connected.");
+  console.log("Reached entry test function!");
+});
 
 //CRUD
 //Create User

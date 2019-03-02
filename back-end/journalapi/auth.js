@@ -3,7 +3,7 @@ const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
 
 //== Authentication ==//
-exports.checkJwt = jwt({
+const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
     cache: true,
     rateLimit: true,
@@ -16,3 +16,5 @@ exports.checkJwt = jwt({
   issuer: `https://bakerc.auth0.com`,
   algorithms: [`RS246`]
 })
+
+module.exports = checkJwt;
