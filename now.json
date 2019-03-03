@@ -5,7 +5,7 @@
   "builds": [
     {
       "src": "back-end/journalapi/*.js",
-      "use": "@now/node-server"
+      "use": "@now/node"
     },
     { "src": "front-end/package.json", 
       "use": "@now/static-build",
@@ -14,7 +14,7 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/back-end/journalapi/(.*)",
       "dest": "/back-end/journalapi/$1"
     },
     {
