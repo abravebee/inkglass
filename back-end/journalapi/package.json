@@ -8,7 +8,6 @@
     "mongoose": "^5.4.11"
   },
   "scripts": {
-    "start": "node index.js",
-    "now-build": "node ./index.js"
+    "start": "node index.js"
   }
 }
