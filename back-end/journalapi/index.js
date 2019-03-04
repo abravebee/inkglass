@@ -25,10 +25,10 @@ const users = require("./routes/users");
 const entries = require("./routes/entries");
 
 //Use routes
-app.use("/users", users);
-app.use("/entries", entries);
+app.use("/journalapi/users", users);
+app.use("/journalapi/entries", entries);
 
-app.get('/', (req, res) => {
+app.get('/journalapi', (req, res) => {
   res.json(`Server up.`)
 })
 
