@@ -10,7 +10,7 @@ const User = require("../models/users");
 
 //Test Route
 router.get("/test", (req, res) => {
-  res.send("Entries are connected.");
+  res.send("Users are connected.");
   console.log("Reached entry test function!");
 });
 
