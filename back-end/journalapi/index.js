@@ -29,14 +29,14 @@ app.use("/users", users);
 app.use("/entries", entries);
 
 app.get('/', (req, res) => {
-
   res.json(`Server up.`)
 })
 
 //Port
-let port = 5500 || process.env.PORT;
+let port = process.env.PORT || 5500;
 
-// app.listen(port, () => {
-//   console.log(`\n=== Server Running on Port ${port} ===\n`);
-// });
-app.listen();
+app.listen(port, () => {
+  console.log(`\n=== Server Running on Port ${port} ===\n`);
+});
+
+//app.listen()
