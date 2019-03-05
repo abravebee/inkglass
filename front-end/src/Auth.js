@@ -63,5 +63,6 @@ class Auth {
 }
 
 const auth0Client = new Auth();
+//no more than one instance of this class
 
 export default auth0Client;
