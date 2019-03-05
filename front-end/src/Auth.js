@@ -6,10 +6,10 @@ class Auth {
   constructor() {
     this.auth0 = new auth0.WebAuth({
       // the following three lines must be updated with info from Auth0 account
-      domain: '<YOUR_AUTH0_DOMAIN>',
-      audience: 'https://<YOUR_AUTH0_DOMAIN>/userinfo',
-      clientID: '<YOUR_AUTH0_CLIENT_ID>',
-      redirectUri: 'http://localhost:3000/callback',
+      domain: 'bakerc.auth0.com',
+      audience: 'https://bakerc.auth0.com/userinfo',
+      clientID: 'Ik8pcKF4QAFcSV7QCOIYDSj0CH2ahljb',
+      redirectUri: 'http://localhost:3000/callback', //conditional for deployment?
       responseType: 'id_token',
       scope: 'openid profile'
     });
