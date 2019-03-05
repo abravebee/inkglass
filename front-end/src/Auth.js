@@ -1,9 +1,11 @@
+//Code taken from Auth0 tutorial
+//== Imports ==//
 import auth0 from 'auth0-js';
 
 class Auth {
   constructor() {
     this.auth0 = new auth0.WebAuth({
-      // the following three lines MUST be updated
+      // the following three lines must be updated with info from Auth0 account
       domain: '<YOUR_AUTH0_DOMAIN>',
       audience: 'https://<YOUR_AUTH0_DOMAIN>/userinfo',
       clientID: '<YOUR_AUTH0_CLIENT_ID>',
@@ -12,6 +14,7 @@ class Auth {
       scope: 'openid profile'
     });
 
+    //ATTN: REWRITE BIND FOR ES6
     this.getProfile = this.getProfile.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
@@ -20,19 +23,19 @@ class Auth {
   }
 
   getProfile() {
-    return this.profile;
+    return this.profile; //declared in this.handleAuthentication
   }
 
   getIdToken() {
-    return this.idToken;
+    return this.idToken; //declared in this.handleAuthentication
   }
 
   isAuthenticated() {
-    return new Date().getTime() < this.expiresAt;
+    return new Date().getTime() < this.expiresAt; //declared in this.handleAuthentication
   }
 
   signIn() {
-    this.auth0.authorize();
+    this.auth0.authorize(); //inherited from auth0.WebAuth?
   }
 
   handleAuthentication() {
