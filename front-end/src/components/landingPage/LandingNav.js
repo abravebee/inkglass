@@ -32,4 +32,4 @@ function LandingNav(props) {
   )
 }
 
-export default LandingNav;
+export default withRouter(LandingNav);
