@@ -17,16 +17,33 @@ export const fetchAllUsers = dispatch => {
     })
 }
 
-export const fetchSingleUser = id => dispatch => {
+export const fetchSingleUser = userid => dispatch => {
   dispatch({ type: FETCHING_USER });
-  axios.get(`${URL}/${id}`)
+  axios.get(`${URL}/${userid}`)
     .then(res => {
-      //res.data = new user
+      //res.data = user object
       dispatch({ type: FETCHED_USER, payload: res.data });
     })
     .catch(err => {
       dispatch({ type: ERROR, payload: err })
     })
+}
+
+export const addUser = user => dispatch => {
+  dispatch({ type: ADDING_USER });
+  axios.post(`${URL}/create`, user)
+    .then(res => {
+      //res.data = new user
+      dispatch({ type: ADDED_USER, payload: res.data })
+    })
+    .catch(err => {
+      dispatch({ type: ERROR, payload: err})
+    })
+}
+
+export const updateUser = (userid, newUser) => dispatch => {
+  dispatch({ type: UPDATING_USER })
+  axios.put(`${URL}/${userid}/update`, newUser)
 }
 
 //== Dispatch Types ==//
