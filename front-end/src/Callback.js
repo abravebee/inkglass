@@ -6,6 +6,8 @@ import auth0Client from './Auth';
 class Callback extends Component {
   async componentDidMount() {
     await auth0Client.handleAuthentication();
+    //search db for user; if doesn't exist, add to db
+    //add profile info to state
     this.props.history.replace('/');
   }
 

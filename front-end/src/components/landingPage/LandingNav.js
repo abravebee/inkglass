@@ -23,7 +23,7 @@ function LandingNav(props) {
       {
         auth0Client.isAuthenticated() &&
         <div>
-          <label>Blessed be, {auth0Client.getProfile().name}</label>
+          <label>{auth0Client.getProfile().name}</label>
           <button onClick={() => {signOut()}}>Sign Out</button>
         </div>
       }

@@ -11,7 +11,7 @@ class Auth {
       clientID: 'Ik8pcKF4QAFcSV7QCOIYDSj0CH2ahljb',
       redirectUri: 'http://localhost:3000/callback', //conditional for deployment?
       responseType: 'id_token',
-      scope: 'openid profile'
+      scope: 'openid email profile'
     });
 
     //ATTN: REWRITE BIND FOR ES6
@@ -36,6 +36,7 @@ class Auth {
 
   signIn() { //initializes authentication process (sends to A0 login page)
     this.auth0.authorize(); //inherited from auth0.WebAuth?
+
   }
 
   handleAuthentication() { //called after user is redirected from A0
@@ -47,6 +48,9 @@ class Auth {
         }
         this.idToken = authResult.idToken;
         this.profile = authResult.idTokenPayload;
+        console.log("authResult", authResult,
+            "email", this.profile.email,
+            "token", this.idToken)
         // set the time that the id token will expire at
         this.expiresAt = authResult.idTokenPayload.exp * 1000;
         resolve();
