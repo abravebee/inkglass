@@ -41,11 +41,6 @@ export const addUser = user => dispatch => {
     })
 }
 
-export const updateUser = (userid, newUser) => dispatch => {
-  dispatch({ type: UPDATING_USER })
-  axios.put(`${URL}/${userid}/update`, newUser)
-}
-
 //== Dispatch Types ==//
 export const ERROR = "ERROR";
 export const FETCHING_ALL_USERS = "FETCHING_ALL_USERS";
