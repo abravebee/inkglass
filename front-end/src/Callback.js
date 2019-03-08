@@ -1,6 +1,12 @@
 //== Dependencies ==//
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
+
+//== Actions ==//
+import { fetchAllUsers, fetchUser, addUser } from './actions';
+
+//== Components ==//
 import auth0Client from './Auth';
 
 class Callback extends Component {
