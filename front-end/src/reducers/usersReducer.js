@@ -23,6 +23,10 @@ export const usersReducer = (state = initialState, action) => {
       return { ...state, fetchingAllUsers: true};
     case actions.FETCHED_ALL_USERS:
       return { ...state, fetchingAllUsers: false, allUsers: action.payload }
+    case actions.FETCHING_USER:
+      return { ...state, fetchingUser: true }
+    case actions.FETCHED_USER:
+      return { ...state, fetchingUser: false, user: action.payload, users: { ...users, action.payload } }
     case actions.ADDING_USER:
       return { ...state, addingUser: true };
     case actions.ADDED_USER:
