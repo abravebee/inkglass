@@ -12,6 +12,11 @@ class Construction extends Component {
         <video autoplay muted loop id="myVideo">
           <source src={Fire} type="video/mp4" />
         </video>
+
+        <div className="content">
+          <h1>Inkglass</h1>
+          <p>Coming Soon</p>
+        </div>
       </div>
     );
   }
