@@ -17,13 +17,57 @@
 
 /* Add some content at the bottom of the video/page */
 .content {
+  border: 1px solid purple;
   color: white;
-  border: solid 1px white;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
 }
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  color: whitesmoke;
+  border: solid 1px white;
+}
+
+.header {
+  font-size: 100px;
+}
+
+.paragraph {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.elements {
+  display: flex;
+  justify-content: center;
+}
+
+.element-icon {
+  filter: invert(100%) sepia(51%) saturate(136%) hue-rotate(165deg) brightness(113%) contrast(92%);
+  height: 50px;
+  width: 50px;
+  padding: 0px 15px 10px 0px;
+}
+
+.element-icon active {
+  filter: invert(26%) sepia(6%) saturate(2657%) hue-rotate(131deg) brightness(95%) contrast(86%);
+}
+
+.fire {
+  height: 70px;
+  width: 70px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+}
+
