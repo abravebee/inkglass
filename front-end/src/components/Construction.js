@@ -96,7 +96,8 @@ class Construction extends Component {
               alt="A leaf icon that changes the background to a forest when clicked" />
           </div>
           <div className="copy">
-            Inkglass aims to bring 21st century analytics to Old World and New Age spirituality. Want to get involved?
+            <p>Inkglass aims to bring 21st century analytics to Old World and New Age spirituality.</p> 
+            <p>Want to contribute? Drop me a line!</p>
             <Contact />
         </div>
       </div>
