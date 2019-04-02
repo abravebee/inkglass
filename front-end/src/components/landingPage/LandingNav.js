@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 const styles = {
   root: {
@@ -22,7 +23,7 @@ const styles = {
     flexGrow: 1,
   },
   menuButton: {
-    marginLeft: -12,
+    marginLeft: 0,
     marginRight: 20,
   },
 }
@@ -35,13 +36,13 @@ function LandingNav(props) {
   };
 
   return (
-    <nav className="{classes.root}">
-      <AppBar position="static">
+    <nav className={classes.root}>
+      <AppBar position="static" color="primary">
         <Toolbar>
         <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
           <MenuIcon />
         </IconButton>
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: 'none', color: 'white' }} >
         <Typography variant="h6" color="inherit" className={classes.grow}>
             Inkglass
           </Typography>
