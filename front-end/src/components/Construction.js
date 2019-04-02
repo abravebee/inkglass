@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 
 //== Components ==//
+import Contact from "./Contact.js";
 import Fire from "../assets/video/fire-loop.mov";
 import Air from "../assets/video/air2.mp4"
 import Earth from "../assets/video/earth-loop.mov"
@@ -51,6 +52,11 @@ class Construction extends Component {
       : this.state.air ? Air
       : this.state.water ? Water 
       : Earth)
+
+    let glassTone = (this.state.fire ? 'fireglass' 
+      : this.state.air ? 'airglass'
+      : this.state.water ? 'waterglass' 
+      : 'earthglass')
       console.log("bg", backgroundSrc)
     return (
       <div className="Construction">
@@ -58,7 +64,7 @@ class Construction extends Component {
           {/* <source /> */}
         </video>
         <div className="glass-container">
-        <div className="glass">
+        <div className={`glass ${glassTone}`}>
         </div>
         </div>
 
@@ -71,21 +77,29 @@ class Construction extends Component {
             <img 
               className={`element-icon fire ${this.state.fire?'active':''}`}
               src={FireIcon} 
-              onClick={() => {this.fire()}} />
+              onClick={() => {this.fire()}}
+              alt="A fire icon that changes the background to a candle when clicked" />
             <img 
               className={`element-icon air ${this.state.air?'active':''}`}
               src={AirIcon}  
-              onClick={() => {this.air()}} />
+              onClick={() => {this.air()}}
+              alt="An air icon that changes the background to smoke when clicked" />
             <img 
               className={`element-icon water ${this.state.water?'active':''}`} 
               src={WaterIcon}  
-              onClick={() => {this.water()}} />
+              onClick={() => {this.water()}}
+              alt="A water icon that changes the background to the ocean when clicked" />
             <img 
               className={`element-icon earth ${this.state.earth?'active':''}`} 
               src={EarthIcon}  
-              onClick={() => {this.earth()}} />
+              onClick={() => {this.earth()}}
+              alt="A leaf icon that changes the background to a forest when clicked" />
           </div>
+          <div className="copy">
+            Inkglass aims to bring 21st century analytics to Old World and New Age spirituality. Want to get involved?
+            <Contact />
         </div>
+      </div>
       </div>
     );
   }

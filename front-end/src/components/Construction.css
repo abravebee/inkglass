@@ -1,4 +1,4 @@
-/* Style the video: 100% width and height to cover the entire window */
+/*== Video Background ==*/
 #myVideo {
   position: fixed;
     top: 50%;
@@ -15,10 +15,11 @@
   transition: 1s opacity;
 }
 
+/*== Main Text and Overlay ==*/
 .glass-container {
   width: 100vw;
   height: 100vh;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   position: absolute;
   display: flex;
   justify-content: center;
@@ -26,8 +27,8 @@
 }
 
 .glass {
-  background: whitesmoke;
   overflow: hidden;
+  -webkit-filter: blur(0px);
   filter: blur(0px);
   position: absolute;
   display: flex;
@@ -36,21 +37,40 @@
   height: 300px;
   width: 100%;
   margin-bottom: 10px;
-  opacity: 0.4;
- 
+  opacity: 0.55;
+}
+.glass-container .fireglass {
+  background: #F7E9DC;
+}
+
+.glass-container .airglass {
+  background: #DED4E8;
+}
+
+.glass-container .waterglass {
+  background: #DBECF3;
+}
+
+.glass-container .earthglass {
+  background: #D5EBE3;
+}
+
+.glass-container .cool {
+  background: lightgrey;
 }
 
 .content {
-  border: 1px solid purple;
-  color: white;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
+      /* border: 1px solid purple; */
+      color: white;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Raleway', sans-serif;
 }
 
 .text {
@@ -62,9 +82,10 @@
   color: black;
 }
 
-.header {
+.Construction .content .text .header {
   opacity: 1;
   font-size: 100px;
+  font-family: 'Megrim', cursive;
 }
 
 .paragraph {
@@ -72,10 +93,12 @@
   padding-top: 10px;
 }
 
+/*== Elements ==*/
 .elements {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  padding-top: 15px;
 }
 
 .element-icon {
@@ -84,8 +107,6 @@
   width: 50px;
   padding: 0px 15px 10px 0px;
 }
-
-
 
 .fire {
   height: 60px;
@@ -104,9 +125,13 @@
   cursor: pointer;
 }
 
-
 .air:hover {
   filter: invert(16%) sepia(29%) saturate(5260%) hue-rotate(258deg) brightness(79%) contrast(123%);
+  cursor: pointer;
+}
+
+.earth:hover {
+  filter: invert(29%) sepia(52%) saturate(430%) hue-rotate(107deg) brightness(96%) contrast(93%);
   cursor: pointer;
 }
 
@@ -114,7 +139,41 @@
   filter: invert(99%) sepia(6%) saturate(259%) hue-rotate(219deg) brightness(113%) contrast(92%);
 }
 
-.earth:hover {
-  filter: invert(29%) sepia(52%) saturate(430%) hue-rotate(107deg) brightness(96%) contrast(93%);
+
+/*== Contact ==*/
+.copy {
+  color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    font-size: 14px;
+    height: 100px;
+}
+
+.Contact ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.Contact {
+  width: 25%;
+}
+
+.Contact a {
+  text-decoration: none;
+  color: black;
+}
+
+.Contact a:hover {
   cursor: pointer;
+  color: whitesmoke;
+}
+
+.Contact li:hover {
+  cursor: pointer;
+  color: whitesmoke;
 }
