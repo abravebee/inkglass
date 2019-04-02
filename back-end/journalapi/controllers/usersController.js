@@ -49,30 +49,3 @@ exports.readAll = (req, res) => {
     res.send(allUsers);
   });
 };
-
-
-//Find a User
-exports.readUser = (req, res) => {
-  User.findById(req.params.userid, (err, user) => {
-    if (err) return next(err);
-    res.send(user);
-  });
-};
-
-//Update a User
-exports.updateUser = (req, res) => {
-  //change to findoneandupdate?
-  User.findByIdAndUpdate(req.params.userid, { $set: req.body }, (err, user) => {
-    if (err) return next(err);
-    res.send(`User ${req.params.userid} updated!`);
-  });
-};
-
-//Delete a User
-exports.deleteUser = (req, res) => {
-  User.findOneAndDelete(req.params.userid, err => {
-    if (err) return next(err);
-    res.send(`User ${req.params.userid} deleted!`);
-  });
-};
-

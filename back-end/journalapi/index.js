@@ -1,11 +1,8 @@
+//== Dependencies ==//
 const express = require("express");
 const bodyParser = require("body-parser");
 
-//Import routes
-const users = require("./routes/users");
-const entries = require("./routes/entries");
-
-//Initialize express app
+//== Initialize Express App ==//
 const app = express();
 
 //Connecting app to remote database
@@ -22,12 +19,16 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//Routes
-app.use("/users", users);
-app.use("/entries", entries);
+//== Routes ==//
+//Import routes
+const users = require("./routes/users");
+const entries = require("./routes/entries");
 
-app.get('/', (req, res) => {
+//Use routes
+app.use("/journalapi/users", users);
+app.use("/journalapi/entries", entries);
 
+app.get('/journalapi', (req, res) => {
   res.json(`Server up.`)
 })
 
@@ -37,3 +38,5 @@ let port = process.env.PORT || 5500;
 app.listen(port, () => {
   console.log(`\n=== Server Running on Port ${port} ===\n`);
 });
+
+//app.listen()
