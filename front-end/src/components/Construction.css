@@ -15,7 +15,31 @@
   transition: 1s opacity;
 }
 
-/* Add some content at the bottom of the video/page */
+.glass-container {
+  width: 100vw;
+  height: 100vh;
+  border: 2px solid blue;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass {
+  background: whitesmoke;
+  overflow: hidden;
+  filter: blur(0px);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.4;
+ 
+}
+
 .content {
   border: 1px solid purple;
   color: white;
@@ -35,11 +59,11 @@
   align-items: center;
   justify-content: space-around;
   width: 80%;
-  color: whitesmoke;
-  border: solid 1px white;
+  color: black;
 }
 
 .header {
+  opacity: 1;
   font-size: 100px;
 }
 
@@ -51,23 +75,46 @@
 .elements {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 
 .element-icon {
-  filter: invert(100%) sepia(51%) saturate(136%) hue-rotate(165deg) brightness(113%) contrast(92%);
+  /* filter: invert(51%) sepia(0%) saturate(173%) hue-rotate(161deg) brightness(98%) contrast(82%); */
   height: 50px;
   width: 50px;
   padding: 0px 15px 10px 0px;
 }
 
-.element-icon active {
-  filter: invert(26%) sepia(6%) saturate(2657%) hue-rotate(131deg) brightness(95%) contrast(86%);
-}
+
 
 .fire {
-  height: 70px;
-  width: 70px;
-  padding-bottom: 0px;
+  height: 60px;
+  width: 60px;
+  padding-bottom: 5px;
   padding-right: 0px;
 }
 
+.fire:hover {
+  filter: invert(42%) sepia(93%) saturate(3481%) hue-rotate(18deg) brightness(92%) contrast(86%);
+  cursor: pointer;
+}
+
+.water:hover {
+  filter: invert(30%) sepia(41%) saturate(7314%) hue-rotate(180deg) brightness(92%) contrast(88%);
+  cursor: pointer;
+}
+
+
+.air:hover {
+  filter: invert(16%) sepia(29%) saturate(5260%) hue-rotate(258deg) brightness(79%) contrast(123%);
+  cursor: pointer;
+}
+
+.elements .active {
+  filter: invert(99%) sepia(6%) saturate(259%) hue-rotate(219deg) brightness(113%) contrast(92%);
+}
+
+.earth:hover {
+  filter: invert(29%) sepia(52%) saturate(430%) hue-rotate(107deg) brightness(96%) contrast(93%);
+  cursor: pointer;
+}

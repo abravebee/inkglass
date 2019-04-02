@@ -25,6 +25,22 @@ class Construction extends Component {
       fire: false
     }
   }
+
+  fire = () => {
+    console.log("FIRE CLICK")
+  }
+
+  air = () => {
+    console.log("AIR CLICK")
+  }
+
+  water = () => {
+    console.log("WATER CLICK")
+  }
+  
+  earth = () => {
+    console.log("EARTH CLICK")
+  }
  
   render() {
     return (
@@ -32,19 +48,26 @@ class Construction extends Component {
         <video autoPlay muted loop id="myVideo">
           <source src={Earth}/>
         </video>
+        <div className="glass-container">
+        <div className="glass">
+        </div>
+        </div>
 
         <div className="content">
-        <div className="text glass">
+        <div className="text">
           <h1 className="header">Inkglass</h1>
           <p className="paragraph">Coming Soon</p>
           </div>
           <div className="elements">
-            <img className="element-icon fire" src={FireIcon} />
-            <img className="element-icon" src={AirIcon} />
-            <img className="element-icon" src={WaterIcon} />
-            <img className="element-icon" src={EarthIcon} />
+            <img className="element-icon fire" src={FireIcon} onClick={() => {this.fire()}} />
+            <img className="element-icon air" src={AirIcon}  onClick={() => {this.air()}} />
+            <img className="element-icon water" src={WaterIcon}  onClick={() => {this.water()}} />
+            <img className="element-icon earth active" src={EarthIcon}  onClick={() => {this.earth()}} />
           </div>
         </div>
+
+    
+
       </div>
     );
   }
