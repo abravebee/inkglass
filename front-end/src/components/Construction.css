@@ -1,0 +1,179 @@
+/*== Video Background ==*/
+#myVideo {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
+}
+
+/*== Main Text and Overlay ==*/
+.glass-container {
+  width: 100vw;
+  height: 100vh;
+  /* border: 2px solid blue; */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass {
+  overflow: hidden;
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.55;
+}
+.glass-container .fireglass {
+  background: #F7E9DC;
+}
+
+.glass-container .airglass {
+  background: #DED4E8;
+}
+
+.glass-container .waterglass {
+  background: #DBECF3;
+}
+
+.glass-container .earthglass {
+  background: #D5EBE3;
+}
+
+.glass-container .cool {
+  background: lightgrey;
+}
+
+.content {
+      /* border: 1px solid purple; */
+      color: white;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Raleway', sans-serif;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  color: black;
+}
+
+.Construction .content .text .header {
+  opacity: 1;
+  font-size: 100px;
+  font-family: 'Megrim', cursive;
+}
+
+.paragraph {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+/*== Elements ==*/
+.elements {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 15px;
+}
+
+.element-icon {
+  /* filter: invert(51%) sepia(0%) saturate(173%) hue-rotate(161deg) brightness(98%) contrast(82%); */
+  height: 50px;
+  width: 50px;
+  padding: 0px 15px 10px 0px;
+}
+
+.fire {
+  height: 60px;
+  width: 60px;
+  padding-bottom: 5px;
+  padding-right: 0px;
+}
+
+.fire:hover {
+  filter: invert(42%) sepia(93%) saturate(3481%) hue-rotate(18deg) brightness(92%) contrast(86%);
+  cursor: pointer;
+}
+
+.water:hover {
+  filter: invert(30%) sepia(41%) saturate(7314%) hue-rotate(180deg) brightness(92%) contrast(88%);
+  cursor: pointer;
+}
+
+.air:hover {
+  filter: invert(16%) sepia(29%) saturate(5260%) hue-rotate(258deg) brightness(79%) contrast(123%);
+  cursor: pointer;
+}
+
+.earth:hover {
+  filter: invert(29%) sepia(52%) saturate(430%) hue-rotate(107deg) brightness(96%) contrast(93%);
+  cursor: pointer;
+}
+
+.elements .active {
+  filter: invert(99%) sepia(6%) saturate(259%) hue-rotate(219deg) brightness(113%) contrast(92%);
+}
+
+
+/*== Contact ==*/
+.copy {
+  color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* padding-top: 10px; */
+    font-size: 16px;
+    height: 100px;
+}
+
+.Contact ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.Contact {
+  width: 25%;
+}
+
+.Contact a {
+  text-decoration: none;
+  color: black;
+}
+
+.Contact a:hover {
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.Contact li:hover {
+  cursor: pointer;
+  color: whitesmoke;
+}
